@@ -21,23 +21,23 @@
   	<form action="/pages/q3_3" method="post">
   	 <p>Просрочка:</p>
     
-    <label><input name="radio_whois" type="radio" id="radio_whois1" value="да" onclick="ilkHomTh(this.value);" checked="checked" />Да</label>
-    <label><input name="radio_whois" type="radio" id="radio_whois2" value="нет" onclick="ilkHomTh(this.value);" />Нет</label>
+    <label><input name="radio_whois" type="radio" id="radio_whois1" value="да" onclick="ilkHomTh(this.value);" checked="checked" /> Да</label>
+    <label><input name="radio_whois" type="radio" id="radio_whois2" value="нет" onclick="ilkHomTh(this.value);" /> Нет</label>
   	
   	  <!-- -->
 	 <div id="are_usure">
 	  
 	  <div class="form-group">
-	    <label for="InputCity">Просрочка по кредиту дней</label>
+	    <label for="InputCity">Просрочка по кредиту (дней)</label>
 	    <input type="text" class="form-control" id="InputCity" placeholder="Просрочка по кредиту дней" maxlength="30" 
-	    name="просрочка_по_кредиту_дней" value="<?php echo @htmlspecialchars($_POST['просрочка_по_кредиту_дней']); ?>" required>
+	    name="просрочка_по_кредиту_дней" value="<?php echo @htmlspecialchars($_POST['просрочка_по_кредиту_дней']); ?>" >
 	  	<p><?php echo @$data['errors']['просрочка_по_кредиту_дней']; ?></p>
 	  </div>
 		
 	   <div class="form-group">
-	    <label for="InputCity">Просрочка по кредиту сумма</label>
+	    <label for="InputCity">Просрочка по кредиту (сумма)</label>
 	    <input type="text" class="form-control" id="InputCity" placeholder="Просрочка по кредиту сумма" maxlength="30" 
-	    name="просрочка_по_кредиту_сумма" value="<?php echo @htmlspecialchars($_POST['просрочка_по_кредиту_сумма']); ?>" required>
+	    name="просрочка_по_кредиту_сумма" value="<?php echo @htmlspecialchars($_POST['просрочка_по_кредиту_сумма']); ?>" >
 	  	<p><?php echo @$data['errors']['просрочка_по_кредиту_сумма']; ?></p>
 	  </div>
 	 </div>
