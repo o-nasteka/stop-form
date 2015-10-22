@@ -12,7 +12,79 @@ class PagesController extends Controller{
     }
 
     public function q2_1(){
-        // $this->data['pages'] = $this->model->getList();
+
+    }
+    public function q2_2(){
+
+    }
+    public function q2_3(){
+
+    }
+    public function q2_4(){
+
+    }
+    public function q3_1(){
+
+    }
+    public function q3_2(){
+
+    }
+    public function q3_3(){
+
+    }
+    public function q4_1(){
+
+    }
+    public function q5_1(){
+
+    }
+    public function q5_2(){
+
+    }
+    public function q5_3(){
+
+    }
+    public function q5_4(){
+
+    }
+    public function q5_5(){
+
+    }
+    public function q5_6(){
+
+    }
+    public function q5_7(){
+
+    }
+    public function q5_8(){
+
+    }
+    public function q5_9(){
+
+    }
+    public function q6_1(){
+
+    }
+    public function q6_2(){
+
+    }
+    public function q6_3(){
+
+    }
+    public function q6_4(){
+
+    }
+    public function q6_5(){
+
+    }
+    public function q6_6(){
+
+    }
+    public function q7_1(){
+
+    }
+    public function q8_1(){
+
     }
 
     public function view(){
