@@ -1,0 +1,32 @@
+<script type="text/javascript"> 
+ function showOrHideRadio(cat1, cat2, cat3) {
+    cat1 = document.getElementById(cat1);
+    cat2 = document.getElementById(cat2);
+    cat3 = document.getElementById(cat3);
+ 
+    cat1.style.display = "block";
+    cat2.style.display = "none";
+    cat3.style.display = "none"
+  }
+</script>
+
+<form action="" method="post">
+У вас лично есть необходимость БЕЗУСЛОВНЫХ дополнительных расходов?<br>
+<input type = "radio" onclick = "showOrHideRadio('cat1', 'cat2','cat3');" 
+  		name="без_доп_расх" value="0"> Уход и лечение  <br>
+		
+		<div id = 'cat1' style = 'display: none;'>
+			Ежемесячная сумма<br>
+			<input type="text" name="сумма_без_доп_расх" 
+			value="<?php echo @htmlspecialchars($_POST['сумма_без_доп_расх']); ?>" ><br>
+			<p><?php echo @$data['errors']['сумма_без_доп_расх']; ?></p>
+		
+		</div>
+		
+<input type = "radio" onclick = "showOrHideRadio('cat2', 'cat1', 'cat3');" 
+name="без_доп_расх" value="1"> Нет<br>
+<div id = 'cat2' style = 'display: none;'></div>
+<input type="hidden" name="anketa" value="6_5">	
+<input type="submit" name="submit" value="Ок">
+</form>
+

@@ -1,0 +1,68 @@
+
+
+<script type="text/javascript">
+  function showOrHide(cat1, cat2, cat3) {
+    cat1 = document.getElementById(cat1);
+    cat2 = document.getElementById(cat2);
+    cat3 = document.getElementById(cat3);
+ 	
+ 
+    cat1.style.display = "block";
+    cat2.style.display = "none";
+    cat3.style.display = "none";
+    
+  }
+</script>
+
+Я учавствую в суде?:
+
+<form action="" method="post" >
+
+
+<input type = "radio" id = "cb1" onclick = "showOrHide('cat1', 'cat2','cat3');" 
+	name="oplata" value="0">Лично  <br>
+<input type = "radio" id = "cb2" onclick = "showOrHide('cat2', 'cat1', 'cat3');" 
+	name="oplata" value="1"> Через представителя адвоката <br>
+<input type = "radio" id = "cb3" onclick = "showOrHide('cat3', 'cat1','cat2');" 
+	name="oplata" value="3">Игнорирую <br>
+
+
+ 
+ 
+<div id = 'cat1' style = 'display: none;'>
+	
+</div>
+
+<div id = 'cat2' style = 'display: none;'>
+		 <p>Фио представителя</p>
+       		<input type="text" name="фио_представителя" 
+                       value="<?php echo @htmlspecialchars($_POST['фио_представителя']); ?>"><br>
+  		<p><?php echo @$data['errors']['фио_представителя']; ?></p>
+
+		<p>Контактный телефон</p>
+       		<input type="text" name="конт_тел_представителя" 
+                       value="<?php echo @htmlspecialchars($_POST['конт_тел_представителя']); ?>"><br>
+  		<p><?php echo @$data['errors']['конт_тел_представителя']; ?></p>
+		
+		<p>E-mail</p>
+       		<input type="text" name="эмеил_представителя" 
+                       value="<?php echo @htmlspecialchars($_POST['эмеил_представителя']); ?>"><br>
+  		<p><?php echo @$data['errors']['эмеил_представителя']; ?></p>
+		
+		<p>Другие контактные данные</p>
+       		<input type="text" name="друг_конт_дан_представителя" 
+                       value="<?php echo @htmlspecialchars($_POST['друг_конт_дан_представителя']); ?>"><br>
+  		<p><?php echo @$data['errors']['друг_конт_дан_представителя']; ?></p>
+</div>
+
+<div id = 'cat3' style = 'display: none;'>
+		    
+</div>
+		
+
+
+ <input type="hidden" name="anketa" value="5_4">
+    <input type="submit" name="submit" value="Ок">
+
+
+</form>

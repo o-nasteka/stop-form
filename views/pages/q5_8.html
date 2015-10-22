@@ -1,0 +1,33 @@
+<script type="text/javascript">
+function showOrHide(cat1, cat2, cat3) {
+    cat1 = document.getElementById(cat1);
+    cat2 = document.getElementById(cat2);
+    cat3 = document.getElementById(cat3);
+ 
+    cat1.style.display = "block";
+    cat2.style.display = "none";
+    cat3.style.display = "none"
+  }
+</script>
+
+Касационное обжалование: <br>
+
+<form action="" method="post" >
+<input type="radio" name="касац_обжал" value="да" onclick = "showOrHide('cat1', 'cat2','cat3');" >Да  <br>
+<input type="radio" name="касац_обжал" value="нет" onclick = "showOrHide('cat2', 'cat1', 'cat3');" >Нет  <br>
+
+<div id = 'cat1' style = 'display: none;'>
+	Кто кассатор?<br>
+	<input type="radio" name="кто_кассатор" value="Должник"> Должник  <br>
+	<input type="radio" name="кто_кассатор" value="Кредитор(банк)"> Кредитор(банк)  <br>
+	<input type="radio" name="кто_кассатор" value="Третья сторона"> Третья сторона  <br>
+	
+</div>
+	<input type="hidden" name="anketa" value="5_8">
+    <input type="submit" name="submit" value="Ок">
+</form>
+
+<div id = 'cat2' style = 'display: none;'></div>
+<div id = 'cat3' style = 'display: none;'></div>
+
+

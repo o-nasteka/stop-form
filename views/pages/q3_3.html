@@ -1,0 +1,22 @@
+<div class="row">
+	<div class="col-md-4 col-xs-4 ">
+  		<form action="" method="post">
+	  	<div class="form-group">
+	    	<label for="InputCity">Выплаченная сумма банку, включая проценты, на момент заполнения анкеты (в валюте кредита)</label>
+	    
+	    	<input type="text" class="form-control" id="InputCity" placeholder="Выплаченная сумма банку, включая проценты, на момент заполнения анкеты (в валюте кредита)" maxlength="30" name="выплаченная_сумма_банку" value="<?php echo @htmlspecialchars($_POST['выплаченная_сумма_банку']); ?>" required>
+	  		<p><?php echo @$data['errors']['выплаченная_сумма_банку']; ?>  </p>
+	  	</div>
+	
+   	 	<input type="hidden" name="anketa" value="3_3">
+	 	<button type="submit" name="submit" class="btn btn-primary">Далее</button>
+ 	</form>
+	</div>
+</div>
+
+
+ 
+ 
+
+ 
+

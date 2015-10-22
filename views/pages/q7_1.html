@@ -1,0 +1,196 @@
+<script type="text/javascript">
+  function showOrHide(cb, cat) {
+    cb = document.getElementById(cb);
+    cat = document.getElementById(cat);
+    if (cb.checked) cat.style.display = "block";
+    else cat.style.display = "none";
+  }
+
+function showOrHideRadio(cat1, cat2, cat3) {
+    cat1 = document.getElementById(cat1);
+    cat2 = document.getElementById(cat2);
+    cat3 = document.getElementById(cat3);
+ 
+    cat1.style.display = "block";
+    cat2.style.display = "none";
+    cat3.style.display = "none"
+  }
+
+function showOrHideRadio2(cat4, cat5, cat6) {
+    cat4 = document.getElementById(cat4);
+    cat5 = document.getElementById(cat5);
+    cat6 = document.getElementById(cat6);
+ 
+    cat4.style.display = "block";
+    cat5.style.display = "none";
+    cat6.style.display = "none"
+  }
+
+function showOrHideRadio3(cat7, cat8, cat9) {
+    cat7 = document.getElementById(cat7);
+    cat8 = document.getElementById(cat8);
+    cat9 = document.getElementById(cat9);
+ 
+    cat7.style.display = "block";
+    cat8.style.display = "none";
+    cat9.style.display = "none"
+  }
+
+function showOrHideRadio4(cat10, cat11, cat12) {
+    cat10 = document.getElementById(cat10);
+    cat11 = document.getElementById(cat11);
+    cat12 = document.getElementById(cat12);
+ 
+    cat10.style.display = "block";
+    cat11.style.display = "none";
+    cat12.style.display = "none"
+  }
+
+</script>
+
+<form action="" method="post">
+Какие попытки предпринимали для урегулирования проблемы? (можно выбрать несколько вариантов)<br>
+
+<div>
+  <input type = 'checkbox' name="попытка_урег_пробл" id = 'cb1' onchange = 'showOrHide("cb1", "cat1с");'/>НЕ ПРЕДПРИНИМАЛИСЬ
+  <br />
+  <div id = 'cat1с' style = 'display: none;'>
+  	подумать как обозначить!
+  </div>
+  
+  		<input type = 'checkbox' name="попытка_урег_пробл" id = 'cb2' onchange = 'showOrHide("cb2", "cat2с");' />Реструкткризация
+  <br />
+  
+  <div id = 'cat2с' style = 'display: none;'>
+  		<input type = "radio" onclick = "showOrHideRadio('cat1', 'cat2','cat3');" 
+  		name="урег_реструктуризация" value="проведена"> Проведена  <br>
+		
+		<div id = 'cat1' style = 'display: none;'>
+			Дата реструктуризации<br>
+			<input type="text" name="дата_урег_реструктуризация" 
+			value="<?php echo @htmlspecialchars($_POST['дата_урег_реструктуризация']); ?>" ><br>
+			<p><?php echo @$data['errors']['дата_урег_реструктуризация']; ?></p>
+		
+		</div>
+		
+		<input type = "radio" onclick = "showOrHideRadio('cat2', 'cat1', 'cat3');" 
+		name="урег_реструктуризация" value="Не проведена">Не проведена<br>
+		
+		<div id = 'cat2' style = 'display: none;'>
+			<input type = "radio" onclick = "showOrHideRadio2('cat4', 'cat5','cat6');" 
+  			name="урег_реструктуризация_не_проведена" value="Отказано банком"> Отказано банком  <br>
+		
+			<div id = 'cat4' style = 'display: none;'></div>	
+			
+			<input type = "radio" onclick = "showOrHideRadio2('cat5', 'cat4','cat6');" 
+  			name="урег_реструктуризация_не_проведена" value="Не подходящее для Вас условия"> Не подходящее для Вас условия  <br>
+		
+			<div id = 'cat5' style = 'display: none;'>
+				Какие условия предлагались<br>
+			<input type="text" name="услов_предл_реструкт" 
+			value="<?php echo @htmlspecialchars($_POST['услов_предл_реструкт']); ?>" ><br>
+			<p><?php echo @$data['errors']['услов_предл_реструкт']; ?></p>
+			</div>	
+			
+		</div>
+		
+		
+		<div id = 'cat3' style = 'display: none;'></div>
+  	
+  </div>
+  
+  <input type = 'checkbox' name="попытка_урег_пробл" id = 'cb3' onchange = 'showOrHide("cb3", "cat3с");' />Погашение кредита с дисконта
+  <br />
+  <div id = 'cat3с' style = 'display: none;'>
+  		<input type = "radio" onclick = "showOrHideRadio3('cat7', 'cat8', 'cat9');" 
+		
+			name="погаш_кредит_дисконт" value="нет">Нет<br>
+  		
+  		<div id = 'cat7' style = 'display: none;'></div>
+  		
+  		
+  		<input type = "radio" onclick = "showOrHideRadio3('cat8', 'cat7', 'cat9');" 
+		
+			name="погаш_кредит_дисконт" value="Предлагал банк">Предлагал банк<br>
+  		
+  		<div id = 'cat8' style = 'display: none;'>
+  			Сумма<br>
+			<input type="text" name="погаш_кредит_дисконт_сумма_банк" 
+			value="<?php echo @htmlspecialchars($_POST['погаш_кредит_дисконт_сумма_банк']); ?>" ><br>
+			<p><?php echo @$data['errors']['погаш_кредит_дисконт_сумма_банк']; ?></p>
+			
+			Дата предложения<br>
+			<input type="text" name="погаш_кредит_дисконт_дата_банк" 
+			value="<?php echo @htmlspecialchars($_POST['погаш_кредит_дисконт_дата_банк']); ?>" ><br>
+			<p><?php echo @$data['errors']['погаш_кредит_дисконт_дата_банк']; ?></p>
+			
+  		</div>
+  		
+  		<input type = "radio" onclick = "showOrHideRadio3('cat9', 'cat7', 'cat8');" 
+		name="погаш_кредит_дисконт" value="Предлагали вы">Предлагали вы<br>
+  		<div id = 'cat9' style = 'display: none;'>
+  			Сумма<br>
+			<input type="text" name="погаш_кредит_дисконт_сумма_вы" 
+			value="<?php echo @htmlspecialchars($_POST['погаш_кредит_дисконт_сумма_вы']); ?>" ><br>
+			<p><?php echo @$data['errors']['погаш_кредит_дисконт_сумма_вы']; ?></p>
+			
+			Дата предложения<br>
+			<input type="text" name="погаш_кредит_дисконт_дата_вы" 
+			value="<?php echo @htmlspecialchars($_POST['погаш_кредит_дисконт_дата_вы']); ?>" ><br>
+			<p><?php echo @$data['errors']['погаш_кредит_дисконт_дата_вы']; ?></p>
+  		</div>
+  		
+  		
+  </div>
+  
+  <input type = 'checkbox' name="попытка_урег_пробл" 
+  id = 'cb4' onchange = 'showOrHide("cb4", "cat4с");' />Продажа залогового имущества
+  <br />
+  <div id = 'cat4с' style = 'display: none;'>
+  		<input type = "radio" onclick = "showOrHideRadio4('cat10', 'cat11', 'cat12');" 
+		name="прод_залог_имущ" value="нет">Нет<br>
+  		<div id = 'cat10' style = 'display: none;'></div>
+  		
+  		<input type = "radio" onclick = "showOrHideRadio4('cat11', 'cat10', 'cat12');" 
+		name="прод_залог_имущ" value="предлагал банк">Предлагал банк<br>
+  		<div id = 'cat11' style = 'display: none;'>
+  			
+  			Дата предложения?<br>
+			<input type="text" name="прод_залог_имущ_дата_банк" 
+			value="<?php echo @htmlspecialchars($_POST['прод_залог_имущ_дата_банк']); ?>" ><br>
+			<p><?php echo @$data['errors']['прод_залог_имущ_дата_банк']; ?></p>
+			Банк списывает остаток долга после продажи?<br>
+			<input type="radio" name="спис_прод_залог_имущ_банк_остаток_долг" value="да"/> Да<br>
+			<input type="radio" name="спис_прод_залог_имущ_банк_остаток_долг" value="нет"/> Нет<br>
+			<input type="radio" name="спис_прод_залог_имущ_банк_остаток_долг" value="Не знаю"/> Не знаю<br>
+  		</div>
+  		
+  		<input type = "radio" onclick = "showOrHideRadio4('cat12', 'cat10', 'cat11');" 
+		name="прод_залог_имущ" value="предлагал банк">Предлагали Вы<br>
+  		<div id = 'cat12' style = 'display: none;'>
+  			
+  			Дата предложения?<br>
+			<input type="text" name="прод_залог_имущ_дата_вы" 
+			value="<?php echo @htmlspecialchars($_POST['прод_залог_имущ_дата_вы']); ?>" ><br>
+			<p><?php echo @$data['errors']['прод_залог_имущ_дата_вы']; ?></p>
+			Банк списывает остаток долга после продажи?<br>
+			<input type="radio" name="спис_прод_залог_имущ_вы_остаток_долг" value="да"/> Да<br>
+			<input type="radio" name="спис_прод_залог_имущ_вы_остаток_долг" value="нет"/> Нет<br>
+			<input type="radio" name="спис_прод_залог_имущ_вы_остаток_долг" value="Не знаю"/> Не знаю<br>
+  		</div>
+  			
+  		
+  			
+  		</div>
+  		
+  </div>
+ 
+ 
+  <input type = 'checkbox' name="попытка_урег_пробл" id = 'cb5' onchange = 'showOrHide("cb5", "cat5с");' />Добровольная передача имущества в счет погашения обязательств
+  <br />
+  <div id = 'cat5с' style = 'display: none;'>подумать как обозначить</div>
+
+</div>
+<input type="hidden" name="anketa" value="7_1">	
+<input type="submit" name="submit" value="Ок">
+</form>

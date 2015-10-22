@@ -1,0 +1,43 @@
+<script type="text/javascript"> 
+ function showOrHideRadio(cat1, cat2, cat3) {
+    cat1 = document.getElementById(cat1);
+    cat2 = document.getElementById(cat2);
+    cat3 = document.getElementById(cat3);
+ 
+    cat1.style.display = "block";
+    cat2.style.display = "none";
+    cat3.style.display = "none"
+  }
+</script>
+
+<form action="" method="post">
+		Есть кредиты в других банках?<br>
+		<input type = "radio" onclick = "showOrHideRadio('cat1', 'cat2','cat3');" 
+  		name="кред_других_банк" value="0"> Да  <br>
+		
+		<div id = 'cat1' style = 'display: none;'>
+			Сумма задолжности<br>
+			<input type="text" name="сумма_задол_других_банк" 
+			value="<?php echo @htmlspecialchars($_POST['сумма_задол_других_банк']); ?>" ><br>
+			<p><?php echo @$data['errors']['сумма_задол_других_банк']; ?></p>
+			
+			Ежемесячный платеж (в грн.)<br>
+			<input type="text" name="ежем_плат_других_банк" 
+			value="<?php echo @htmlspecialchars($_POST['ежем_плат_других_банк']); ?>" ><br>
+			<p><?php echo @$data['errors']['ежем_плат_других_банк']; ?></p>
+			Кредит проблемный?<br>
+			<input type="radio" name="кредит_проб-других_банк" 
+			value=" Да (НЕ обслуживаю, или ЧАСТИЧНО обслуживаю)" > Да (НЕ обслуживаю, или ЧАСТИЧНО обслуживаю)<br>
+			<input type="radio" name="кредит_проб-других_банк" 
+			value="Нет (Обслуживаю)" > Нет (Обслуживаю)<br><br>
+			
+			
+		</div>
+		
+		<input type = "radio" onclick = "showOrHideRadio('cat2', 'cat1', 'cat3');" 
+		name="кред_других_банк" value="1"> Нет<br>
+		<div id = 'cat2' style = 'display: none;'></div>
+		<div id = 'cat3' style = 'display: none;'></div>
+<input type="hidden" name="anketa" value="6_4">	
+<input type="submit" name="submit" value="Ок">
+</form>

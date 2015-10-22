@@ -1,0 +1,14 @@
+<form action="" method="post" >
+Какой среднемесячный доход? (ориентировочно)<br>
+<input type="text" name="сред_мес_доход" 
+value="<?php echo @htmlspecialchars($_POST['сред_мес_доход']); ?>" ><br>
+<p><?php echo @$data['errors']['сред_мес_доход']; ?></p>
+
+Какой среднемесячный доход поручителя? (если есть ориентировочно)<br>
+<input type="text" name="сред_мес_доход_поруч" 
+value="<?php echo @htmlspecialchars($_POST['сред_мес_доход_поруч']); ?>" ><br>
+<p><?php echo @$data['errors']['сред_мес_доход_поруч']; ?></p>
+
+<input type="hidden" name="anketa" value="6_2">
+<input type="submit" name="submit" value="Ок">
+</form>

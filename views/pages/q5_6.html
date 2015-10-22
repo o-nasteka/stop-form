@@ -1,0 +1,128 @@
+
+<script type="text/javascript">
+  function showOrHide(cat1, cat2, cat3) {
+    cat1 = document.getElementById(cat1);
+    cat2 = document.getElementById(cat2);
+    cat3 = document.getElementById(cat3);
+ 
+    cat1.style.display = "block";
+    cat2.style.display = "none";
+    cat3.style.display = "none"
+  }
+function showOrHide2(cat4, cat5, cat6) {
+    cat4 = document.getElementById(cat4);
+    cat5 = document.getElementById(cat5);
+    cat6 = document.getElementById(cat6);
+ 
+    cat4.style.display = "block";
+    cat5.style.display = "none";
+    cat6.style.display = "none"
+  }
+
+ function showOrHide3(cat7, cat8, cat9) {
+    cat7 = document.getElementById(cat7);
+    cat8 = document.getElementById(cat8);
+    cat9 = document.getElementById(cat9);
+ 
+    cat7.style.display = "block";
+    cat8.style.display = "none";
+    cat9.style.display = "none"
+  }
+
+
+</script>
+
+Наименование суда: <br>
+
+<form action="" method="post" >
+
+<input type = "radio" onclick = "showOrHide('cat1', 'cat2','cat3');" 
+name="имя_суд" value="Название суда первой инстанции"> Название суда первой инстанции <br>
+<input type = "radio" onclick = "showOrHide('cat2', 'cat1', 'cat3');"
+ name="имя_суд" value="Апелляционная инстанция"> Апелляционная инстанция <br>
+
+ 
+ 
+<div id = 'cat1' style = 'display: none;'>
+	<p>ФИО Судьи</p>
+       		<input type="text" name="фио_судьи" 
+                   value="<?php echo @htmlspecialchars($_POST['фио_судьи']); ?>" ><br>
+  		<p><?php echo @$data['errors']['фио_судьи']; ?></p>
+  	
+  	Стадия судебного производства:<br>
+  	
+  		<input type = "radio" onclick = "showOrHide2('cat4', 'cat5','cat6');" 
+		name="стад_суд_произ" value="Назначенно первое заседание"> Назначенно первое заседание <br> 
+		<input type = "radio"  onclick = "showOrHide2('cat5', 'cat4', 'cat6');"
+ 		name="стад_суд_произ" value="1"> Судебное расмсотрение дела <br>
+			<input type = "radio"  onclick = "showOrHide2('cat6', 'cat4', 'cat5');"
+ 		name="стад_суд_произ" value="1"> Вынесено судебное решение <br>
+
+	<div id = 'cat5' style = 'display: none;'>
+		<p>Сколько засиданий прошло?</p>
+       		<input type="text" name="сколько_засиданий_прошло" 
+                   value="<?php echo @htmlspecialchars($_POST['сколько_засиданий_прошло']); ?>" ><br>
+  		<p><?php echo @$data['errors']['сколько_засиданий_прошло']; ?></p>
+		
+		<p>Сколько засиданий перенесено?</p>
+       		<input type="text" name="сколько_засиданий_перенесенно" 
+                   value="<?php echo @htmlspecialchars($_POST['сколько_засиданий_перенесенно']); ?>" ><br>
+  		<p><?php echo @$data['errors']['сколько_засиданий_перенесенно']; ?></p>
+	
+		<p>Когда следующее засидание? (Дата) </p>
+       		<input type="text" name="когда_следующее_засидание" 
+                   value="<?php echo @htmlspecialchars($_POST['когда_следующее_засидание']); ?>" ><br>
+  		<p><?php echo @$data['errors']['когда_следующее_засидание']; ?></p>
+	
+			<p>ПЕРЕХОД НА 6 РАЗДЕЛ!</p>
+	</div>
+	
+	<div id = 'cat6' style = 'display: none;'>
+		Исполнительный лист выдан? <br>
+		
+		<input type = "radio" onclick = "showOrHide3('cat7', 'cat8','cat9');" 
+		name="исп_лист_выдан" value="0"> Нет или Не знаю <br> 
+		
+		<input type = "radio" onclick = "showOrHide3('cat8', 'cat7','cat9');" 
+		name="исп_лист_выдан" value="0"> Да <br> 
+		
+	</div>
+	
+		<div id = 'cat7' style = 'display: none;'></div>
+		
+		<div id = 'cat8' style = 'display: none;'>
+			<p>Дата выдачи</p>
+       		<input type="text" name="дата_выдачи" 
+                   value="<?php echo @htmlspecialchars($_POST['дата_выдачи']); ?>" ><br>
+  		<p><?php echo @$data['errors']['дата_выдачи']; ?></p>
+			<p>Сумма взыскания</p>
+       		<input type="text" name="сумма_взыскания" 
+                   value="<?php echo @htmlspecialchars($_POST['сумма_взыскания']); ?>" ><br>
+  		<p><?php echo @$data['errors']['сумма_взыскания']; ?></p>
+			Тип взыскания:<br>
+			<input type="radio" name="тип_взыскания" 
+			value="Деньги за счет всего имущества ">Деньги за счет всего имущества <br>
+			<input type="radio" name="тип_взыскания" 
+			value="Принятие залога / ипотеки в собственность">Принятие залога / ипотеки в собственность<br>
+			<input type="radio" name="тип_взыскания" 
+			value="Право продажи залога / ипотеки">Право продажи залога / ипотеки<br>
+			<input type="radio" name="тип_взыскания" 
+			value="Наличие решения о выселении"> Наличие решения о выселении<br>
+		
+		</div>
+		
+		
+
+
+
+</div>
+
+
+
+<div id = 'cat2' style = 'display: none;'></div>
+<div id = 'cat3' style = 'display: none;'></div>
+<div id = 'cat4' style = 'display: none;'></div>
+<div id = 'cat9' style = 'display: none;'></div>
+
+<input type="hidden" name="anketa" value="5_6">
+    <input type="submit" name="submit" value="Ок">

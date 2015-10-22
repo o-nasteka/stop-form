@@ -1,0 +1,95 @@
+<script type="text/javascript">
+function showOrHide(cat1, cat2, cat3,cat4,cat5,cat6) {
+    cat1 = document.getElementById(cat1);
+    cat2 = document.getElementById(cat2);
+    cat3 = document.getElementById(cat3);
+    cat4 = document.getElementById(cat4);
+    cat5 = document.getElementById(cat5);
+    cat6 = document.getElementById(cat6);
+ 
+    cat1.style.display = "block";
+    cat2.style.display = "none";
+    cat3.style.display = "none"
+    cat4.style.display = "none"
+    cat5.style.display = "none"
+    cat6.style.display = "none"
+  }
+</script>
+
+<p>Наименование ОГИС</p>
+
+<form action="" method="post" >
+<input type="text" name="наим_огис" 
+value="<?php echo @htmlspecialchars($_POST['наим_огис']); ?>" ><br>
+<p><?php echo @$data['errors']['наим_огис']; ?></p>
+<br>
+<p>ФИО госисполнителя</p>
+<input type="text" name="фио_госисполнителя" 
+value="<?php echo @htmlspecialchars($_POST['фио_госисполнителя']); ?>" ><br>
+<p><?php echo @$data['errors']['фио_госисполнителя']; ?></p>
+<br>
+<p>Дата открытия </p>
+<input type="text" name="дата_открытия" 
+value="<?php echo @htmlspecialchars($_POST['дата_открытия']); ?>" ><br>
+<p><?php echo @$data['errors']['дата_открытия']; ?></p>
+<br>
+<p>Сумма взыскания </p>
+<input type="text" name="сумма_взыскания" 
+value="<?php echo @htmlspecialchars($_POST['сумма_взыскания']); ?>" ><br>
+<p><?php echo @$data['errors']['сумма_взыскания']; ?></p>
+<br>
+
+Стадия исполнительного производства?<br>
+<input type="radio" name="стад_испол_произв" onclick = "showOrHide('cat1', 'cat2','cat3','cat4','cat5','cat6');"
+value="Срок на добровольное исполнение судебного решения">Срок на добровольное исполнение судебного решения<br>
+<input type="radio" name="стад_испол_произв" onclick = "showOrHide('cat2', 'cat1','cat3','cat4','cat5','cat6');"
+value="Арест имущества">Арест имущества<br>
+<input type="radio" name="стад_испол_произв" onclick = "showOrHide('cat3', 'cat1','cat2','cat4','cat5','cat6');"
+value="Опись имущества">Опись имущества<br>
+<input type="radio" name="стад_испол_произв" onclick = "showOrHide('cat4', 'cat1','cat2','cat3','cat5','cat6');"
+value="Оценка имущества">Оценка имущества<br>
+<input type="radio" name="стад_испол_произв" onclick = "showOrHide('cat5', 'cat1','cat2','cat3','cat4','cat6');"
+value="Передача имущества на торги">Передача имущества на торги<br>
+
+<br>
+<input type="radio" name="стад_испол_произв" onclick = "showOrHide('cat6', 'cat1','cat2','cat3','cat4','cat5');"
+value="Публичные торги" >Публичные торги<br>
+
+<div id = 'cat6' style = 'display: none;'>
+	<p>Начальная сумма</p>
+    <input type="text" name="торги_начал_сумма" 
+    value="<?php echo @htmlspecialchars($_POST['торги_начал_сумма']); ?>" ><br>
+  	<p><?php echo @$data['errors']['торги_начал_сумма']; ?></p>
+	
+	<p>Условия торгов:</p><br>
+	
+	<p>Будет списан остакот долга</p>
+	<input type="radio" name="буд_спис_ост_долга" 
+	value="да">Да<br>
+	<input type="radio" name="буд_спис_ост_долга" 
+	value="нет">нет
+	<br>
+	<br>
+	<p>Очередность торгов</p>
+	<input type="radio" name="очер_тогов" 
+	value="Первые">Первые<br>
+	<input type="radio" name="очер_тогов" 
+	value="Вторые">Вторые<br>
+	<input type="radio" name="очер_тогов" 
+	value="Третьи">Третьи<br>
+	
+</div>
+
+<input type="hidden" name="anketa" value="5_9">
+<input type="submit" name="submit" value="Ок">
+</form>
+
+
+<div id = 'cat1' style = 'display: none;'></div>
+<div id = 'cat2' style = 'display: none;'></div>
+<div id = 'cat3' style = 'display: none;'></div>
+<div id = 'cat4' style = 'display: none;'></div>
+<div id = 'cat5' style = 'display: none;'></div>
+
+
+

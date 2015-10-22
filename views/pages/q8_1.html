@@ -1,0 +1,224 @@
+<script type="text/javascript">
+function showOrHideRadio(cat1, cat2, cat3, cat4) {
+    cat1 = document.getElementById(cat1);
+    cat2 = document.getElementById(cat2);
+    cat3 = document.getElementById(cat3);
+    cat4 = document.getElementById(cat4);
+ 
+    cat1.style.display = "block";
+    cat2.style.display = "none";
+    cat3.style.display = "none";
+    cat4.style.display = "none";
+  }
+
+function showOrHideRadio2(cat5, cat6) {
+    cat5 = document.getElementById(cat5);
+    cat6 = document.getElementById(cat6);
+   
+ 
+    cat5.style.display = "block";
+    cat6.style.display = "none";
+   
+  }
+function showOrHideRadio3(cat7, cat8, cat9) {
+    cat7 = document.getElementById(cat7);
+    cat8 = document.getElementById(cat8);
+    cat9 = document.getElementById(cat9);
+    
+ 
+    cat7.style.display = "block";
+    cat8.style.display = "none";
+    cat9.style.display = "none";
+  }
+
+function showOrHideRadio4(cat10, cat11) {
+    cat10 = document.getElementById(cat10);
+    cat11 = document.getElementById(cat11);
+   
+ 
+    cat10.style.display = "block";
+    cat11.style.display = "none";
+   
+  }
+
+function showOrHideRadio5(cat12, cat13) {
+    cat12 = document.getElementById(cat12);
+    cat13 = document.getElementById(cat13);
+   
+ 
+    cat12.style.display = "block";
+    cat13.style.display = "none";
+   
+  }
+
+function showOrHideRadio6(cat14, cat15) {
+    cat14 = document.getElementById(cat14);
+    cat15 = document.getElementById(cat15);
+   
+ 
+    cat14.style.display = "block";
+    cat15.style.display = "none";
+   
+  }
+
+function showOrHideRadio7(cat16, cat17) {
+    cat16 = document.getElementById(cat16);
+    cat17 = document.getElementById(cat17);
+   
+ 
+    cat16.style.display = "block";
+    cat17.style.display = "none";
+   
+  }
+
+</script>
+
+Моя цель?<br>
+
+<input type = "radio" onclick = "showOrHideRadio('cat1', 'cat2','cat3','cat4');" 
+  		name="моя_цель" value="Реструктуризация кредита"> Реструктуризация кредита  <br>
+		
+		<div id = 'cat1' style = 'display: none;'>
+			Хотите перевести в ГРН.<br>
+			<input type = "radio" onclick = "showOrHideRadio2('cat5', 'cat6');" 
+  			name="хот_перевсти_грн" value=""> Да  <br>
+			<div id = 'cat5' style = 'display: none;'>
+				Какую сумму сможете выплачивать ежемесячно?<br>
+			<input type="text" name="рестр_кред_грн_да_сум" 
+			value="<?php echo @htmlspecialchars($_POST['рестр_кред_грн_да_сум']); ?>" ><br>
+			<p><?php echo @$data['errors']['рестр_кред_грн_да_сум']; ?></p>
+			</div>
+			<input type = "radio" onclick = "showOrHideRadio2('cat6', 'cat5');" 
+  			name="хот_перевсти_грн" value=""> Нет  <br>
+			<div id = 'cat6' style = 'display: none;'>
+				Какую сумму сможете выплачивать ежемесячно?<br>
+			<input type="text" name="рестр_кред_грн_нет_сум" 
+			value="<?php echo @htmlspecialchars($_POST['рестр_кред_грн_нет_сум']); ?>" ><br>
+			<p><?php echo @$data['errors']['рестр_кред_грн_нет_сум']; ?></p>
+			</div>
+		
+		</div>
+
+<input type = "radio" onclick = "showOrHideRadio('cat2', 'cat1','cat3','cat4');" 
+  		name="моя_цель" value="Рассчитаться по кредиту"> Рассчитаться по кредиту  <br>
+		
+		<div id = 'cat2' style = 'display: none;'>
+			
+			<input type = "radio" onclick = "showOrHideRadio3('cat7', 'cat8', 'cat9');" 
+  			name="расч_кредит" value="">Хочу сохранить это залоговое имущество   <br>
+			
+			<div id = 'cat7' style = 'display: none;'>
+				Готовы погасить кредит с дисконтом (скидкой)?<br>
+					<input type = "radio" onclick = "showOrHideRadio4('cat10', 'cat11');" 
+  					name="расч_кредит_хоч_сохр_залог_имущ_кред_диск" value="да"> Да  <br>
+		
+						<div id = 'cat10' style = 'display: none;'>
+							Какую сумму готовы заплатить?<br>
+							<input type="text" name="расч_кредит_хоч_сохр_залог_имущ_кред_диск_да_сумма" 
+							value="<?php echo @htmlspecialchars($_POST['расч_кредит_хоч_сохр_залог_имущ_кред_диск_да_сумма']); ?>" ><br>
+							<p><?php echo @$data['errors']['расч_кредит_хоч_сохр_залог_имущ_кред_диск_да_сумма']; ?></p>
+						</div>
+						
+					<input type = "radio" onclick = "showOrHideRadio4('cat11', 'cat10');" 
+  					name="расч_кредит_хоч_сохр_залог_имущ_кред_диск" value="нет"> Нет  <br>
+		
+						<div id = 'cat11' style = 'display: none;'>
+							Вам придется заплатить полную сумму задолжности банку или Ваша цель не верна
+						</div>
+				 
+			</div>
+			
+			<input type = "radio" onclick = "showOrHideRadio3('cat8', 'cat7', 'cat9');" 
+  			name="расч_кредит" value="">Готов(а) продать или расстаться с залоговым имуществом   <br>
+			<div id = 'cat8' style = 'display: none;'>
+				Готов(а) на переезд (в т.ч в другой город)<br>
+				<input type="radio" name="расч_кредит_гот_прод_залог_имущ_на_пер" value="да">Да<br>
+				<input type="radio" name="расч_кредит_гот_прод_залог_имущ_на_пер" value="нет">Нет<br>
+				 
+			</div>
+			
+			<input type = "radio" onclick = "showOrHideRadio3('cat9', 'cat7', 'cat8');" 
+  			name="расч_кредит" value="">Мой кредит беззалоговый  <br>
+			
+			
+			<div id = 'cat9' style = 'display: none;'>
+				
+				Готовы погасить кредит с дисконтом (скидкой)?<br>
+					<input type = "radio" onclick = "showOrHideRadio4('cat12', 'cat13');" 
+  					name="расч_кредит_беззалоговый_гот_погас_дисконт" value="да"> Да  <br>
+		
+						<div id = 'cat12' style = 'display: none;'>
+							Какую сумму готовы заплатить?<br>
+							<input type="text" name="расч_кредит_беззалоговый_гот_погас_дисконт_да_сумма" 
+							value="<?php echo @htmlspecialchars($_POST['расч_кредит_беззалоговый_гот_погас_дисконт_да_сумма']); ?>" ><br>
+							<p><?php echo @$data['errors']['расч_кредит_беззалоговый_гот_погас_дисконт_да_сумма']; ?></p>
+						</div>
+						
+					<input type = "radio" onclick = "showOrHideRadio4('cat13', 'cat12');" 
+  					name="расч_кредит_беззалоговый_гот_погас_дисконт" value="нет"> Нет  <br>
+		
+						<div id = 'cat13' style = 'display: none;'>
+							Вам придется заплатить полную сумму задолжности банку или Ваша цель не верна
+						</div>
+				
+				
+				
+			</div>
+		
+		</div>
+
+<input type = "radio" onclick = "showOrHideRadio('cat3', 'cat1','cat2','cat4');" 
+  		name="моя_цель" value="Освободиться от поручительства"> Освободиться от поручительства  <br>
+		
+		<div id = 'cat3' style = 'display: none;'>
+			подумать как обозначить
+		
+		</div>
+
+<input type = "radio" onclick = "showOrHideRadio('cat4', 'cat1','cat2','cat3');" 
+  		name="моя_цель" value="Банкротство (только для Физлиц-предпринимателей или юрлиц)"> Банкротство (только для Физлиц-предпринимателей или юрлиц)  <br>
+		
+		<div id = 'cat4' style = 'display: none;'>
+			
+		<input type = "radio" onclick = "showOrHideRadio6('cat14', 'cat15');" 
+  		name="банкротство" value="Хочу сохранить залоговое имущество"> Хочу сохранить залоговое имущество  <br>
+		
+			<div id = 'cat14' style = 'display: none;'>
+			
+			Готовы погасить кредит с дисконтом (скидкой)?
+			<input type = "radio" onclick = "showOrHideRadio7('cat16', 'cat17');" 
+  			name="банкротство_готов_погас_кред_диск" value="">Да  <br>
+		
+				<div id = 'cat16' style = 'display: none;'> 
+					Какую сумму готовы заплатить?<br>
+					<input type="text" name="банкротство_готов_погас_кред_диск_да_сумма" 
+					value="<?php echo @htmlspecialchars($_POST['банкротство_готов_погас_кред_диск_да_сумма']); ?>" ><br>
+					<p><?php echo @$data['errors']['банкротство_готов_погас_кред_диск_да_сумма']; ?></p>
+				</div>
+				
+		
+			</div>
+			
+			<input type = "radio" onclick = "showOrHideRadio7('cat17', 'cat16');" 
+  			name="банкротство_готов_погас_кред_диск" value="">Нет  <br>
+		
+			<div id = 'cat16' style = 'display: none;'> </div>
+				Вам придется заплатить полную сумму задолжности банку или Ваша цель не верна
+			
+		
+			
+			
+			<input type = "radio" onclick = "showOrHideRadio6('cat15', 'cat14');" 
+  			name="банкротство" value="Готов(а) расстаться с залоговым имуществом"> Готов(а) расстаться с залоговым имуществом  <br>
+		
+			<div id = 'cat15' style = 'display: none;'></div>
+			
+			
+		</div>
+			
+		
+			
+		
+		
+		
+		

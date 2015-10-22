@@ -1,0 +1,43 @@
+<script type="text/javascript">
+  function showOrHide(cat1, cat2, cat3, cat4) {
+    cat1 = document.getElementById(cat1);
+    cat2 = document.getElementById(cat2);
+    cat3 = document.getElementById(cat3);
+ 	cat4 = document.getElementById(cat4);
+ 
+    cat1.style.display = "block";
+    cat2.style.display = "none";
+    cat3.style.display = "none";
+    cat4.style.display = "none";
+  }
+</script>
+
+<h3> Взыскание в несудебное/до судебное (Подправить javascript) </h3>
+
+<form action="" method="post" >
+    
+    
+        <label><input type="radio" name="radio" 
+        value="звонки" checked="checked" onclick = "showOrHide('cat1', 'cat2','cat3','cat4');" ><b>Звонки банка/коллекторов</b></label>
+               <br>
+                
+        <label><input type="radio" name="radio" 
+        value="письма"  onclick = "showOrHide('cat2', 'cat1', 'cat3','cat4');" ><b>Письма/Досудебные требования</b></label>
+              <br>
+               
+        <label><input type="radio" name="radio" 
+        value="визиты" onclick = "showOrHide('cat3', 'cat1','cat2',cat4);" ><b>Визиты представителей банка/Коллекторов</b></label>
+                   <br>
+                   
+         <label><input type="radio" name="radio" 
+         value="другое" onclick = "showOrHide('cat4', 'cat3','cat2', 'cat1');" ><b>Другое(Опишите)</b></label>
+                   <br>
+             <div id='cat4' style = 'display: none;' >  
+       		<input type="text" name="другое" 
+                                   value="<?php echo @htmlspecialchars($_POST['другое']); ?>" ><br>
+  		<p><?php echo @$data['errors']['другое']; ?></p>
+    		</div>
+   
+    <input type="hidden" name="anketa" value="5_3">
+    <input type="submit" name="submit" value="Ок">
+</form>

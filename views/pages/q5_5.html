@@ -1,0 +1,45 @@
+
+
+<script type="text/javascript">
+  function showOrHide(cat1, cat2, cat3) {
+    cat1 = document.getElementById(cat1);
+    cat2 = document.getElementById(cat2);
+    cat3 = document.getElementById(cat3);
+ 
+    cat1.style.display = "block";
+    cat2.style.display = "none";
+    cat3.style.display = "none"
+  }
+</script>
+
+ Тип иска 
+
+<form action="" method="post" >
+<input type = "radio"  onclick = "showOrHide('cat1', 'cat2','cat3');" name="oplata" value="1"> 
+Взыскание суммы задолжности <br>
+<input type = "radio"  onclick = "showOrHide('cat2', 'cat1', 'cat3');" name="oplata" value="2"> 
+Взыскание залога/ипотеки<br>
+
+
+
+ 
+ 
+<div id = 'cat1' style = 'display: none;'>
+		<p><b>Сумма, согласно иска</b></p>
+       		<input type="text" name="сумма_согласно_иска" 
+                                   value="<?php echo @htmlspecialchars($_POST['сумма_согласно_иска']); ?>" ><br>
+  		<p><?php echo @$data['errors']['сумма_согласно_иска']; ?></p>
+</div>
+
+<div id = 'cat2' style = 'display: none;'>
+ 	<input type="radio" name="взыск_залог_ипот" 
+ 	value="Путем принятия кредитором залога/ипотеки в собственность"> Путем принятия кредитором залога/ипотеки в собственность
+ 	<input type="radio" name="взыск_залог_ипот" 
+ 	value="Путем получения кредитором права продажи залога/ипотеки">Путем получения кредитором права продажи залога/ипотеки 
+</div>
+
+
+
+ <input type="hidden" name="anketa" value="5_5">
+    <input type="submit" name="submit" value="Ок">
+</form>

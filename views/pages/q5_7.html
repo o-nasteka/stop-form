@@ -1,0 +1,57 @@
+<script type="text/javascript">
+function showOrHide(cat1, cat2, cat3) {
+    cat1 = document.getElementById(cat1);
+    cat2 = document.getElementById(cat2);
+    cat3 = document.getElementById(cat3);
+ 
+    cat1.style.display = "block";
+    cat2.style.display = "none";
+    cat3.style.display = "none"
+  }
+</script>
+
+Аппеляционное обжалование <br>
+<form action="" method="post" >
+<br>
+Кто апеллянт?<br>
+<input type="radio" name="кто_апеллянт" value="Должник" >Должник<br>
+<input type="radio" name="кто_апеллянт" value="Кредитор(банк)" >Кредитор(банк)<br>
+<input type="radio" name="кто_апеллянт" value="Третья сторона" >Третья сторона<br>
+<br>
+<br>
+
+Стадия обжалования: <br>
+<input type="radio" name="стад_обжад" 
+value="Назначено первое заседание" onclick = "showOrHide('cat1', 'cat2','cat3');" >Назначено первое засидание<br>
+<input type="radio" name="стад_обжад" 
+value="Рассмотрение апелляционной жалобы" onclick = "showOrHide('cat2', 'cat1', 'cat3');" >Рассмотрение апелляционной жалобы<br>
+<input type="radio" name="стад_обжад" 
+value="Вынесено судебное решение" onclick = "showOrHide('cat3', 'cat1', 'cat2');" >Вынесено судебное решение<br>
+
+<div id = 'cat1' style = 'display: none;'>переход</div>
+
+<div id = 'cat2' style = 'display: none;'>
+	<p>Сколько заседаний прошло?</p>
+    <input type="text" name="скольк_засед_прошло" 
+    value="<?php echo @htmlspecialchars($_POST['скольк_засед_прошло']); ?>" ><br>
+  	<p><?php echo @$data['errors']['скольк_засед_прошло']; ?></p>
+	
+	<p>Сколько заседаний перенесено?</p>
+    <input type="text" name="скольк_засед_перенесено" 
+    value="<?php echo @htmlspecialchars($_POST['скольк_засед_прошло']); ?>" ><br>
+  	<p><?php echo @$data['errors']['скольк_засед_прошло']; ?></p>
+	
+	<p>Когда следующее заседание(дата)?</p>
+    <input type="text" name="скольк_засед_перенесено" 
+    value="<?php echo @htmlspecialchars($_POST['скольк_засед_прошло']); ?>" ><br>
+  	<p><?php echo @$data['errors']['скольк_засед_прошло']; ?></p>
+		
+		Переход! 
+	
+</div>
+
+<div id = 'cat3' style = 'display: none;'></div>
+
+<input type="hidden" name="anketa" value="5_7">
+    <input type="submit" name="submit" value="Ок">
+</form>

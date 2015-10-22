@@ -1,0 +1,184 @@
+<script type="text/javascript">
+  function showOrHideCheckbox(cb, cat) {
+    cb = document.getElementById(cb);
+    cat = document.getElementById(cat);
+    if (cb.checked) cat.style.display = "block";
+    else cat.style.display = "none";
+  }
+
+  function showOrHideRadio(cat1, cat2, cat3) {
+    cat1 = document.getElementById(cat1);
+    cat2 = document.getElementById(cat2);
+    cat3 = document.getElementById(cat3);
+ 
+    cat1.style.display = "block";
+    cat2.style.display = "none";
+    cat3.style.display = "none"
+  }
+
+function showOrHideRadio2(cat4, cat5, cat6) {
+    cat4 = document.getElementById(cat4);
+    cat5 = document.getElementById(cat5);
+    cat6 = document.getElementById(cat6);
+ 
+    cat4.style.display = "block";
+    cat5.style.display = "none";
+    cat6.style.display = "none"
+  }
+  
+  function showOrHideRadio3(cat7, cat8, cat9) {
+    cat7 = document.getElementById(cat7);
+    cat8 = document.getElementById(cat8);
+    cat9 = document.getElementById(cat9);
+ 
+    cat7.style.display = "block";
+    cat8.style.display = "none";
+    cat9.style.display = "none"
+  }
+function showOrHideRadio4(cat10, cat11, cat12) {
+    cat10 = document.getElementById(cat10);
+    cat11 = document.getElementById(cat11);
+    cat12 = document.getElementById(cat12);
+ 
+    cat10.style.display = "block";
+    cat11.style.display = "none";
+    cat12.style.display = "none"
+  }
+</script>
+
+В семье есть Ваши содержанцы?(Можно выбрать несколько вариантов)
+
+
+<form action="" method="post">
+<div>
+  <input type = 'checkbox' id = 'cb1' onchange = 'showOrHideCheckbox("cb1", "cat1c");'/>Дети до 18 лет
+  <br />
+  
+  	<div id = 'cat1c' style = 'display: none;'>
+  		Количество и возраст?<br>
+		<input type="text" name="колич_возраст_дет" 
+		value="<?php echo @htmlspecialchars($_POST['колич_возраст_дет']); ?>" >
+		<p><?php echo @$data['errors']['колич_возраст_дет']; ?></p>
+  		
+  		Необходимость дополнительных расходов?<br>
+  		<input type = "radio" onclick = "showOrHideRadio('cat1', 'cat2','cat3');" 
+  		name="семья_доп_расх" value="0"> Учеба  <br>
+		<input type = "radio" onclick = "showOrHideRadio('cat2', 'cat1', 'cat3');" 
+		name="семья_доп_расх" value="1"> Лечение<br>
+		<input type = "radio" onclick = "showOrHideRadio('cat3', 'cat1','cat2');" 
+		name="семья_доп_расх" value="3"> Нет
+ 
+ 
+		<div id = 'cat1' style = 'display: none;'>
+			Ежемесячная сумма (учеба)<br>
+			<input type="text" name="Ежемес_сумма_учеба" 
+			value="<?php echo @htmlspecialchars($_POST['Ежемес_сумма_учеба']); ?>" ><br>
+			<p><?php echo @$data['errors']['Ежемес_сумма_учеба']; ?></p>
+			
+		</div>
+		<div id = 'cat2' style = 'display: none;'>
+			Ежемесячная сумма (лечение)<br>
+			<input type="text" name="Ежемес_сумма_лечение" 
+			value="<?php echo @htmlspecialchars($_POST['Ежемес_сумма_лечение']); ?>" ><br>
+			<p><?php echo @$data['errors']['Ежемес_сумма_лечение']; ?></p>
+			
+		</div>
+		<div id = 'cat3' style = 'display: none;'></div>
+		<br><br>
+  	
+  	
+	</div>
+  
+  <input type = 'checkbox' id = 'cb2' onchange = 'showOrHideCheckbox("cb2", "cat2c");' />Родители, пенсионеры
+  <br />
+  
+  	<div id = 'cat2c' style = 'display: none;'>
+  		Количество и возраст?<br>
+		<input type="text" name="колич_возраст_род_пенсионеры" 
+		value="<?php echo @htmlspecialchars($_POST['колич_возраст_род_пенсионеры']); ?>" >
+		<p><?php echo @$data['errors']['колич_возраст_род_пенсионеры']; ?></p>
+		
+		
+		Необходимость дополнительных расходов?<br>
+  		<input type = "radio" onclick = "showOrHideRadio2('cat4', 'cat5','cat6');" 
+  		name="род_пенс_доп_расх" value="0"> Уход и лечение  <br>
+			<div id = 'cat4' style = 'display: none;'>
+			
+				Ежемесячная сумма (уход и лечение )<br>
+				<input type="text" name="Ежемес_сумма_уход_леч" 
+				value="<?php echo @htmlspecialchars($_POST['Ежемес_сумма_уход_леч']); ?>" ><br>
+				<p><?php echo @$data['errors']['Ежемес_сумма_уход_леч']; ?></p>
+	
+			</div>
+		
+		<input type = "radio" onclick = "showOrHideRadio2('cat5', 'cat4', 'cat6');" 
+		name="род_пенс_доп_расх" value="1"> нет<br>
+			<div id = 'cat5' style = 'display: none;'></div>
+		
+  	
+  	</div>
+  
+  
+  
+  <input type = 'checkbox' id = 'cb3' onchange = 'showOrHideCheckbox("cb3", "cat3c");' />Больные и другие варианты
+  <br />
+  
+  	<div id = 'cat3c' style = 'display: none;'>
+  		Количество и возраст?<br>
+		<input type="text" name="колич_возраст_больн_дрг" 
+		value="<?php echo @htmlspecialchars($_POST['колич_возраст_больн_дрг']); ?>" >
+		<p><?php echo @$data['errors']['колич_возраст_больн_дрг']; ?></p>
+		
+		Необходимость дополнительных расходов?<br>
+  		<input type = "radio" onclick = "showOrHideRadio3('cat7', 'cat8','cat9');" 
+  		name="больн_дрг_доп_расх" value="0"> Уход и лечение  <br>
+			
+			<div id = 'cat7' style = 'display: none;'>
+			
+				Ежемесячная сумма (уход и лечение )<br>
+				<input type="text" name="Ежемес_сумма_уход_леч_больн_дрг" 
+				value="<?php echo @htmlspecialchars($_POST['Ежемес_сумма_уход_леч_больн_дрг']); ?>" ><br>
+				<p><?php echo @$data['errors']['Ежемес_сумма_уход_леч_больн_дрг']; ?></p>
+	
+			</div>
+		
+		<input type = "radio" onclick = "showOrHideRadio3('cat8', 'cat7', 'cat9');" 
+		name="больн_дрг_доп_расх" value="1"> нет<br>
+			<div id = 'cat8' style = 'display: none;'></div>
+		
+		
+  	
+  	</div>
+	
+	 <input type = 'checkbox' id = 'cb4' onchange = 'showOrHideCheckbox("cb4", "cat4c");' />Воины или ветераны АТО 
+  	<br />
+	<div id = 'cat4c' style = 'display: none;'>
+  		
+		
+		Необходимость дополнительных расходов?<br>
+  		<input type = "radio" onclick = "showOrHideRadio4('cat10', 'cat11','cat12');" 
+  		name="воины_ато_доп_расх" value="0"> Ежемесячная сумма  <br>
+			
+			<div id = 'cat10' style = 'display: none;'>
+			
+				
+				<input type="text" name="Ежемес_сумма_уход_леч_больн_дрг" 
+				value="<?php echo @htmlspecialchars($_POST['Ежемес_сумма_уход_леч_больн_дрг']); ?>" ><br>
+				<p><?php echo @$data['errors']['Ежемес_сумма_уход_леч_больн_дрг']; ?></p>
+	
+			</div>
+		
+		<input type = "radio" onclick = "showOrHideRadio3('cat11', 'cat10', 'cat12');" 
+		name="воины_ато_доп_расх" value="1"> нет<br>
+			<div id = 'cat11' style = 'display: none;'></div>
+		
+		
+  	
+  	</div>
+	
+
+</div>
+<input type="hidden" name="anketa" value="6_3">
+<input type="submit" name="submit" value="Ок">
+</form>
+	

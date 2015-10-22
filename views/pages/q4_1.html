@@ -1,0 +1,333 @@
+
+
+    <style type="text/css">
+        .vis0 {visibility: hidden}
+        .vis1 {visibility: visible}
+    </style>
+    <script language="javascript" type="text/javascript"> <!--
+        function showOrHide(cb, cat) {
+		    cb = document.getElementById(cb);
+		    cat = document.getElementById(cat);
+		    if (cb.checked) cat.style.display = "block";
+		    else cat.style.display = "none";
+  		}
+		
+		  function ilkHomTh(stayType) {
+            var e1 = document.getElementById("are_usure");
+            if (stayType=='да') {e1.className='vis1';}
+            if (stayType=='нет') {e1.className='vis0';}
+        }
+        
+         function ilkHomTh2(stayType) {
+            var e1 = document.getElementById("are_usure2");
+            if (stayType=='да') {e1.className='vis1';}
+            if (stayType=='нет') {e1.className='vis0';}
+        }
+        
+          function ilkHomTh3(stayType) {
+            var e1 = document.getElementById("are_usure3");
+            if (stayType=='да') {e1.className='vis1';}
+            if (stayType=='нет') {e1.className='vis0';}
+        }
+          function ilkHomTh4(stayType) {
+            var e1 = document.getElementById("are_usure4");
+            if (stayType=='да') {e1.className='vis1';}
+            if (stayType=='нет') {e1.className='vis0';}
+        }
+    --></script>
+    <style>
+        .are_usure {display: none}
+    </style>
+
+
+
+
+
+<form action="" method="post">
+  
+  <h3><p>Обеспечение по кредиту</p></h3>
+   
+    <input type = 'checkbox' name="checkbox_ipoteka"  id = 'cb1' onchange = 'showOrHide("cb1", "cat1");'>Ипотека
+  <br >
+ 
+  	<input type = 'checkbox' name="checkbox_poruchitelstvo" id = 'cb2' onchange = 'showOrHide("cb2", "cat2");' >Поручительство
+  <br >
+  
+  <input type = 'checkbox' name="checkbox_zalog" id = 'cb8' onchange = 'showOrHide("cb8", "cat8");' >Залог
+  <br >
+ 
+  	<input type = 'checkbox' name="checkbox_otsutstvuet" id = 'cb9' onchange = 'showOrHide("cb9", "cat9");' >Отсутствует
+  <br > 
+
+ 
+ 
+ 
+<div id = 'cat1' style = 'display: none;'> Ипотека 
+ 	<p>Месторасположение:</p>
+ 		<p><b>Город</b></p><input type="text" name="город_ипотека" value="<?php echo @htmlspecialchars($_POST['город_ипотека']); ?>"><br>
+  		<p><?php echo @$data['errors']['город_ипотека']; ?></p>
+  		
+  		<p><b>Район</b></p><input type="text" name="район_ипотека" value="<?php echo @htmlspecialchars($_POST['район_ипотека']); ?>"><br>
+  		<p><?php echo @$data['errors']['район_ипотека']; ?></p>
+  		
+  		<p>Наименование объекта:</p>
+  			  <input type = 'checkbox' name="checkbox_ipoteka_kvartira" id = 'cb3' onchange = 'showOrHide("cb3", "cat3");' >Квартира
+  				<br >
+ 
+  			  <input type = 'checkbox' name="checkbox_ipoteka_dom" id = 'cb4' onchange = 'showOrHide("cb4", "cat4");' >Дом
+  				<br >
+  		
+  			 <input type = 'checkbox' name="checkbox_ipoteka_kom_nedv" id = 'cb5' onchange = 'showOrHide("cb5", "cat5");' >Коммерческая недвижимость
+  				<br >
+  			 <input type = 'checkbox' name="checkbox_ipoteka_zemlya" id = 'cb6' onchange = 'showOrHide("cb6", "cat6");' >Земля
+  				<br >
+  			 <input type = 'checkbox' name="checkbox_ipoteka_drugoe" id = 'cb7' onchange = 'showOrHide("cb7", "cat7");' >Другое
+  				<br >	
+  		
+  		<div id = 'cat3' style = 'display: none;'>
+  		
+  		<p>Квартира: </p>
+  			<p><b>Площадь(кв.м)</b></p><input type="text" name="площадь_квартира_ипотека" 
+  			value="<?php echo @htmlspecialchars($_POST['площадь_квартира_ипотека']); ?>"><br>
+  			<p><?php echo @$data['errors']['площадь_квартира_ипотека']; ?></p>
+  			
+  			 <p><b>Тех.состояние</b></p>
+	 		 <p><input type="radio" checked="checked" name="тех_состояния_квартира_ипотека" 
+	 		 value="удовлетворительное">Удовлетворительное<Br>
+	         <input type="radio" name="тех_состояния_квартира_ипотека" 	
+	         value="не удовлетворительное">Не удовлетворительное<Br>
+  			
+  			<p><b>Рыночная стоимость(в валюте кредита)</b></p><input type="text" name="рыночная_стоимость_квартира_ипотека" 
+  			value="<?php echo @htmlspecialchars($_POST['рыночная_стоимость_квартира_ипотека']); ?>"><br>
+  			<p><?php echo @$data['errors']['рыночная_стоимость_квартира_ипотека']; ?></p>
+  			
+  			<p><b>Зарегистрированы несовершеннолетние, нетрудоспособные, пенсионеры, ветераны АТО </b></p>
+  					
+  			  <label><input name="radio_whois_1" type="radio" id="radio_whois1" 
+  			  value="да" onclick="ilkHomTh(this.value);" checked="checked" >Да</label>
+    		  <label><input name="radio_whois_1" type="radio" id="radio_whois2" 
+              value="нет" onclick="ilkHomTh(this.value);"  >Нет</label>
+    
+    		<div id="are_usure">
+        		<br />
+       			<p><b>Кто из перечисленных зарегестрирован?</b></p>
+       			<input type="text" 
+       			    name="Кто_из_перечисленных_зарегестрирован_квартира_ипотека" 
+       				value="<?php echo @htmlspecialchars($_POST['Кто_из_перечисленных_зарегестрирован_квартира_ипотека']); ?>"><br>
+  					<p><?php echo @$data['errors']['Кто_из_перечисленных_зарегестрирован_квартира_ипотека']; ?></p>
+  			</div>
+  		</div>
+  		
+  		
+  		
+  		<div id = 'cat4' style = 'display: none;'>
+  			<p>Дом: </p>
+  			<p><b>Площадь(кв.м)</b></p><input type="text" name="площадь_дом_ипотека" 
+  			value="<?php echo @htmlspecialchars($_POST['площадь_дом_ипотека']); ?>"><br>
+  			<p><?php echo @$data['errors']['площадь_дом_ипотека']; ?></p>
+  			
+  			 <p><b>Тех.состояние</b></p>
+	 		 <p><input type="radio" checked="checked" name="тех_состояния_дом_ипотека" 
+	 		 value="удовлетворительное">Удовлетворительное<Br>
+	         <input type="radio" name="тех_состояния_дом_ипотека" 	
+	         value="не удовлетворительное">Не удовлетворительное<Br>
+  			
+  			<p><b>Рыночная стоимость(в валюте кредита)</b></p><input type="text" name="рыночная_стоимость_дом_ипотека" 
+  			value="<?php echo @htmlspecialchars($_POST['рыночная_стоимость_дом_ипотека']); ?>"><br>
+  			<p><?php echo @$data['errors']['рыночная_стоимость_дом_ипотека']; ?></p>
+  			
+  			<p><b>Зарегистрированы несовершеннолетние, нетрудоспособные, пенсионеры, ветераны АТО </b></p>
+  					
+  			  <label><input name="radio_whois_2" type="radio" id="radio_whois1" 
+  			  value="да" onclick="ilkHomTh2(this.value);" checked="checked" >Да</label>
+    		  <label><input name="radio_whois_2" type="radio" id="radio_whois2" 
+              value="нет" onclick="ilkHomTh2(this.value);"  >Нет</label>
+    
+    		<div id="are_usure2">
+        		<br />
+       			<p><b>Кто из перечисленных зарегестрирован?</b></p><input type="text" 
+       				name="Кто_из_перечисленных_зарегестрирован_дом_ипотека" 
+       				value="<?php echo @htmlspecialchars($_POST['Кто_из_перечисленных_зарегестрирован_дом_ипотека']); ?>"><br>
+  					<p><?php echo @$data['errors']['Кто_из_перечисленных_зарегестрирован_дом_ипотека']; ?></p>
+  			</div>
+  		</div>
+  		
+  		<div id = 'cat5' style = 'display: none;'>
+  			Коммерческая недвижимость:
+  			<p><b>Площадь(кв.м)</b></p><input type="text" name="площадь_ком_недв_ипотека" 
+  			value="<?php echo @htmlspecialchars($_POST['площадь_ком_недв_ипотека']); ?>"><br>
+  			<p><?php echo @$data['errors']['площадь_ком_недв_ипотека']; ?></p>
+  			
+  			 <p><b>Тех.состояние</b></p>
+	 		 <p><input type="radio" checked="checked" name="тех_состояния_ком_недв_ипотека" 
+	 		 value="удовлетворительное">Удовлетворительное<Br>
+	         <input type="radio" name="тех_состояния_ком_недв_ипотека" 	
+	         value="не удовлетворительное">Не удовлетворительное<Br>
+  			
+  			<p><b>Рыночная стоимость(в валюте кредита)</b></p><input type="text" name="рыночная_стоимость_ком_недв_ипотека" 
+  			value="<?php echo @htmlspecialchars($_POST['рыночная_стоимость_ком_недв_ипотека']); ?>"><br>
+  			<p><?php echo @$data['errors']['рыночная_стоимость_ком_недв_ипотека']; ?></p>
+  			
+  			<p><b>эксплуатируется? </b></p>
+  					
+  			  <label><input name="radio_whois_3" type="radio" id="radio_whois1" 
+  			  value="да" onclick="ilkHomTh3(this.value);" checked="checked" >Да</label>
+    		  <label><input name="radio_whois_3" type="radio" id="radio_whois2" 
+              value="нет" onclick="ilkHomTh3(this.value);"  >Нет</label>
+    
+    		<div id="are_usure3">
+        		<br />
+       			<p><b>Какой доход приносит?</b></p><input type="text" name="какой_доход_приносит_ком_недв_ипотека" 
+       				value="<?php echo @htmlspecialchars($_POST['какой_доход_приносит_ком_недв_ипотека']); ?>"><br>
+  					<p><?php echo @$data['errors']['какой_доход_приносит_ком_недв_ипотека']; ?></p>
+  			</div>
+  		</div>
+  			
+  			
+  		
+ 	
+ 	<div id = 'cat6' style = 'display: none;'>
+ 		Земля:
+ 		<p><b>Площадь(соток)</b></p><input type="text" name="соток_земля_ипотека" 
+  			value="<?php echo @htmlspecialchars($_POST['соток_земля_ипотека']); ?>"><br>
+  			<p><?php echo @$data['errors']['соток_земля_ипотека']; ?></p>
+ 			
+ 			 <p><b>Назначение</b></p>
+	 		 <p><input type="radio" checked="checked" name="назначение_земля_ипотека" 
+	 		 value="сельскохозяйственное">Сельскохозяйственное<Br>
+	         <input type="radio" name="назначение_земля_ипотека" 	
+	         value="под застройку">Под застройку<Br>
+ 			
+ 			<p><b>Рыночная стоимость(в валюте кредита)</b></p><input type="text" name="рыночная_стоимость_земля_ипотека" 
+  			value="<?php echo @htmlspecialchars($_POST['рыночная_стоимость_земля_ипотека']); ?>"><br>
+  			<p><?php echo @$data['errors']['рыночная_стоимость_земля_ипотека']; ?></p>
+ 	</div>
+ 
+ 	<div id = 'cat7' style = 'display: none;'>
+ 		Другое:
+ 		<p><b>Рыночная стоимость(в валюте кредита)- другое</b></p><input type="text" name="рыночная_стоимость_другое_ипотека" 
+  			value="<?php echo @htmlspecialchars($_POST['рыночная_стоимость_другое_ипотека']); ?>"><br>
+  			<p><?php echo @$data['errors']['рыночная_стоимость_другое_ипотека']; ?></p>
+ 	</div>
+</div>
+   
+<div id = 'cat2' style = 'display: none;'>
+   		Меню Поручительство
+  		<p><b>ФИО поручителя</b></p><input type="text" name="фио_поручителя" 
+  			value="<?php echo @htmlspecialchars($_POST['фио_поручителя']); ?>"><br>
+  			<p><?php echo @$data['errors']['фио_поручителя']; ?></p>
+   		Контактные данные:
+   		<p><b>Телефон</b></p><input type="text" name="Телефон_поручителя" 
+  			value="<?php echo @htmlspecialchars($_POST['Телефон_поручителя']); ?>"><br>
+  			<p><?php echo @$data['errors']['Телефон_поручителя']; ?></p>
+   		<p><b>email</b></p><input type="email" name="эмаил_поручителя" 
+  			value="<?php echo @htmlspecialchars($_POST['эмаил_поручителя']); ?>"><br>
+  			<p><?php echo @$data['errors']['эмаил_поручителя']; ?></p>
+  		<p><b>Другой вид связи</b></p><input type="text" name=">Другой_вид_связи_поручителя" 
+  			value="<?php echo @htmlspecialchars($_POST['Другой_вид_связи_поручителя']); ?>"><br>
+  			<p><?php echo @$data['errors']['Другой_вид_связи_поручителя'];?>
+  	
+</div>
+
+<div id = 'cat8' style = 'display: none;'> 
+	Залог:<br>
+	
+		 <input type = 'checkbox' name="checkbox_zalog_avto" id = 'cb10' onchange = 'showOrHide("cb10", "cat10");' >Автомобиль
+  				<br >
+ 
+  			  <input type = 'checkbox' name="checkbox_zalog_dvig_imush" id = 'cb11' onchange = 'showOrHide("cb11", "cat11");' >Движимое имущество
+  				<br >
+  		
+  			 <input type = 'checkbox' name="checkbox_zalog_cenn_bumag" id = 'cb12' onchange = 'showOrHide("cb12", "cat12");' >Ценные бумаги
+  				<br >
+  			 <input type = 'checkbox' name="checkbox_zalog_korp_prava" id = 'cb13' onchange = 'showOrHide("cb13", "cat13");' >Корпоративные права
+  				<br >
+  			 <input type = 'checkbox' name="checkbox_zalog_drugoe" id = 'cb14' onchange = 'showOrHide("cb14", "cat14");' >Другое
+  				<br >	
+
+	
+
+	<div id = 'cat10' style = 'display: none;'> 
+		Автомобиль:
+		<p><b>Марка, год выпуска</b></p><input type="text" name="марка_авто_залог" 
+  			value="<?php echo @htmlspecialchars($_POST['марка_авто_залог']); ?>"><br>
+  			<p><?php echo @$data['errors']['марка_авто_залог']; ?></p>
+		
+		<p><b>Рыночная стоимость</b></p><input type="text" name="рыночная_стоимость_авто_залог" 
+  			value="<?php echo @htmlspecialchars($_POST['рыночная_стоимость_авто_залог']); ?>"><br>
+  			<p><?php echo @$data['errors']['рыночная_стоимость_авто_залог']; ?></p>
+		
+		<p><b>Город регистрации</b></p><input type="text" name="город_регистрации_авто_залог" 
+  			value="<?php echo @htmlspecialchars($_POST['город_регистрации_авто_залог']); ?>"><br>
+  			<p><?php echo @$data['errors']['город_регистрации_авто_залог']; ?></p>
+		
+	</div>
+	
+	<div id = 'cat11' style = 'display: none;'>
+		Движимое имущество
+		<p><b>Наименование, год выпуска</b></p><input type="text" name="Наименование_движ_имущ_залог" 
+  			value="<?php echo @htmlspecialchars($_POST['Наименование_движ_имущ_залог']); ?>"><br>
+  			<p><?php echo @$data['errors']['Наименование_движ_имущ_залог']; ?></p>
+		
+		<p><b>Рыночная стоимость</b></p><input type="text" name="рыночная_стоимость_движ_имущ_залог" 
+  			value="<?php echo @htmlspecialchars($_POST['рыночная_стоимость_движ_имущ_залог']); ?>"><br>
+  			<p><?php echo @$data['errors']['рыночная_стоимость_движ_имущ_залог']; ?></p>
+		
+		<p><b>Город регистрации</b></p><input type="text" name="город_регистрации_движ_имущ_залог" 
+  			value="<?php echo @htmlspecialchars($_POST['город_регистрации_движ_имущ_залог']); ?>"><br>
+  			<p><?php echo @$data['errors']['город_регистрации_движ_имущ_залог']; ?></p>
+	
+	</div>
+	
+	<div id = 'cat12' style = 'display: none;'>
+		Ценные бумаги:
+			Эмитент
+			<p><b>Оценночная текущая стоимость</b></p><input type="text" name="ценные_бумаги_залог" 
+  			value="<?php echo @htmlspecialchars($_POST['ценные_бумаги_залог']); ?>"><br>
+  			<p><?php echo @$data['errors']['ценные_бумаги_залог']; ?></p>
+	</div>
+	
+	<div id = 'cat13' style = 'display: none;'>
+		Корпоративные права:
+			<p><b>Предприятие работающее?</b></p>
+  					
+  			  <label><input name="radio_whois_4" type="radio" id="radio_whois1" 
+  			  value="да" onclick="ilkHomTh4(this.value);" checked="checked" >Да</label>
+    		  <label><input name="radio_whois_4" type="radio" id="radio_whois2" 
+              value="нет" onclick="ilkHomTh4(this.value);"> Нет</label>
+    
+    		<div id="are_usure4">
+        		<br />
+       			<p><b>Ваше участие в компании работающее?</b></p> 
+       				
+       				<p><input type="radio" checked="checked" name="Ваше_участие_в_компании_работающее" 
+       														value="да">Да<Br>
+  						<input type="radio" name="Ваше_участие_в_компании_работающее" 
+  															value="нет">Нет<Br>
+  			</div>
+		
+	</div>
+	
+	<div id = 'cat14' style = 'display: none;'>
+		<p><b>Оценночная текущая стоимость - другое</b></p><input type="text" name="другое_залог" 
+  			value="<?php echo @htmlspecialchars($_POST['другое_залог']); ?>"><br>
+  			<p><?php echo @$data['errors']['другое_залог']; ?></p>
+	</div>
+	
+
+
+
+
+</div>
+
+<div id = 'cat9' style = 'display: none;'>
+	Отсутствует
+	<input type="hidden" name="обеспечение_по_кредиту" value="отсутствует">	
+</div>
+	
+	<input type="hidden" name="anketa" value="4_1">
+    <input type="submit" name="submit" value="Ок">
+	
+</form>
+
+

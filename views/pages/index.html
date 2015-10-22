@@ -1,7 +1,93 @@
-<?php foreach($data['pages'] as $page_data) { ?>
 
-    <div style="margin-top: 20px;">
-        <a href="/pages/view/<?=$page_data['alias']?>"><?=$page_data['title']?></a>
+
+<div class="row">
+
+    <div class="col-md-4 col-xs-4 ">
+        <form action="/pages/q2_1" method="post">
+            <!-- -->
+            <div class="form-group">
+                <label for="InputCity">Город</label>
+                <input type="text" class="form-control" id="InputCity" placeholder="Город" maxlength="30"
+                       name="город" value="<?php echo @htmlspecialchars($_POST['город']); ?>" required>
+                <p><?php echo @$data['errors']['город']; ?></p>
+            </div>
+
+            <!-- -->
+            <div class="form-group">
+                <label for="InputLName">Фамилия</label>
+                <input type="text" class="form-control" id="InputLName" placeholder="Фамилия" maxlength="30" required
+                       name="Фамилия" value="<?php echo @htmlspecialchars($_POST['Фамилия']); ?>"><br>
+                <p><?php echo @$data['errors']['Фамилия']; ?></p>
+
+            </div>
+            <!-- -->
+
+            <!-- -->
+            <div class="form-group">
+                <label for="InputName3">Имя Отчество</label>
+                <input type="text" class="form-control" id="InputName3" placeholder="Имя Отчество" maxlength="30" required
+                       name="имя_отчество" value="<?php echo @htmlspecialchars($_POST['имя_отчество']); ?>">
+                <p><?php echo @$data['errors']['имя_отчество']; ?></p>
+            </div>
+            <!-- -->
+
+            <!-- -->
+            <div class="form-group">
+                <label for="InputPhone">Телефон</label>
+                <input type="phone" class="form-control bfh-phone" id="InputPhone" placeholder="Телефон" maxlength="17" required
+                       name="телефон" value="<?php echo @htmlspecialchars($_POST['телефон']); ?>">
+                <p><?php echo @$data['errors']['телефон']; ?></p>
+            </div>
+            <!-- -->
+
+            <!-- -->
+            <div class="form-group">
+                <label for="InputEmail">E-Mail</label>
+                <input type="email" class="form-control" id="InputEmail" placeholder="E-Mail" maxlength="50" required
+                       name="email" value="<?php echo @htmlspecialchars($_POST['email']); ?>">
+                <p><?php echo @$data['errors']['email']; ?></p>
+            </div>
+            <!-- -->
+
+
+
+            <div class="form-group">
+                <label for="sel1">Статус клиента:</label>
+                <select class="form-control" id="sel1" name="статус_клиента" required>
+                    <option value="Заемщик">Заемщик</option>
+                    <option value="Поручитель">Поручитель</option>
+                    <option value="Залогодатель">Залогодатель</option>
+                    <option value="Ипотекодатель">Ипотекодатель</option>
+                </select>
+            </div>
+            <input type="hidden" name="anketa" value="1_1">
+            <button type="submit" name="submit" class="btn btn-primary">Далее</button>
+        </form>
     </div>
 
-<?php } ?>
+</div>
+
+<br><br>
+
+<!--
+ <form action="" method="post" >
+  <p><b>Город</b></p><input type="text" name="город" value="<?php echo @htmlspecialchars($_POST['город']); ?>"><br>
+  		<p><?php echo @$data['errors']['город']; ?></p>
+  <p><b>Фамилия</b></p><input type="text" name="Фамилия" value="<?php echo @htmlspecialchars($_POST['Фамилия']); ?>"><br>
+  		<p><?php echo @$data['errors']['Фамилия']; ?></p>
+  <p><b>Имя, Отчество</b></p><input type="text" name="имя_отчество" value="<?php echo @htmlspecialchars($_POST['имя_отчество']); ?>"><br>
+  		<p><?php echo @$data['errors']['имя_отчество']; ?></p>
+  <p><b>Контактный телефон</b></p><input type="text" name="телефон" value="<?php echo @htmlspecialchars($_POST['телефон']); ?>"><br>
+ 		<p><?php echo @$data['errors']['телефон']; ?></p>
+  <p><b>e-mail</b></p><input type="email" name="email" value="<?php echo @htmlspecialchars($_POST['email']); ?>"><br>
+  		<p><?php echo @$data['errors']['email']; ?></p>
+
+  <p><b>Статус клиента</b></p>
+  <p><input type="radio" checked="checked" name="статус_клиента" value="Заемщик">Заемщик<Br>
+  <input type="radio" name="статус_клиента" value="Поручитель">Поручитель<Br>
+  <input type="radio" name="статус_клиента" value="Залогодатель">Залогодатель<br>
+  <input type="radio" name="статус_клиента" value="Ипотекодатель">Ипотекодатель</p>
+  <input type="hidden" name="anketa" value="1_1">
+  <input type="submit" name="submit" value="Ок" >
+ </form>
+ -->

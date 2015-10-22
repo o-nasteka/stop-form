@@ -1,0 +1,72 @@
+<script type="text/javascript">
+  function showOrHide(cat1, cat2, cat3, cat4) {
+    cat1 = document.getElementById(cat1);
+    cat2 = document.getElementById(cat2);
+    cat3 = document.getElementById(cat3);
+ 	cat4 = document.getElementById(cat4);
+ 
+    cat1.style.display = "block";
+    cat2.style.display = "none";
+    cat3.style.display = "none";
+    cat4.style.display = "none";
+  }
+</script>
+
+
+<h3> Взыскание (Подправить javascript) </h3>
+
+  <p>Город</p>
+     	<input type="text" name="город_взыскатель" 
+        	value="<?php echo @htmlspecialchars($_POST['город_взыскатель']); ?>"><br>
+  		<p><?php echo @$data['errors']['город_взыскатель']; ?></p>
+
+
+<p>Кто взыскатель?</p>
+
+<form action="" method="post" >
+
+
+<input type = "radio" id = "cb1"  onclick = "showOrHide('cat1', 'cat2','cat3','cat4');" 
+	name="rad_who_vzisk" value="1">Банк  <br>
+<input type = "radio" id = "cb2" onclick = "showOrHide('cat2', 'cat1', 'cat3','cat4');" 
+	name="rad_who_vzisk" value="2"> Компания от имени банка <br>
+<input type = "radio" id = "cb3" onclick = "showOrHide('cat3', 'cat1','cat2',cat4);" 
+	name="rad_who_vzisk" value="3">Коллектор или фактор <br>
+<input type = "radio" id = "cb4" onclick = "showOrHide('cat4', 'cat3','cat2', 'cat1');" 
+	name="rad_who_vzisk" value="4">Фонд гарантирования вкладов от имени банка<br>
+
+ 
+ 
+<div id = 'cat1' style = 'display: none;'>
+	   <p>Название (банка)</p>
+       		<input type="text" name="банк_взыскатель" 
+                                   value="<?php echo @htmlspecialchars($_POST['банк_взыскатель']); ?>" ><br>
+  		<p><?php echo @$data['errors']['банк_взыскатель']; ?></p>
+
+</div>
+<div id = 'cat2' style = 'display: none;'>
+		 <p>Название (компания от имени банка)</p>
+       		<input type="text" name="компания_взыскатель" 
+                       value="<?php echo @htmlspecialchars($_POST['компания_взыскатель']); ?>"><br>
+  		<p><?php echo @$data['errors']['компания_взыскатель']; ?></p>
+</div>
+<div id = 'cat3' style = 'display: none;'>
+		      <p>Название (Коллектор или фактор)</p>
+       		<input type="text" name="коллектор_взыскатель" 
+                    value="<?php echo @htmlspecialchars($_POST['коллектор_взыскатель']); ?>"><br>
+  		<p><?php echo @$data['errors']['коллектор_взыскатель']; ?></p>
+</div>
+<div id = 'cat4' style = 'display: none;'>
+		 <p>Название фонда(фонд гарантирования вкладов от имени банка)</p>
+       		<input type="text" name="фонд_от_банка" 
+                    value="<?php echo @htmlspecialchars($_POST['фонд_от_банка']); ?>"><br>
+  		<p><?php echo @$data['errors']['фонд_от_банка']; ?></p>
+</div>
+		
+
+
+ <input type="hidden" name="anketa" value="5_1">
+    <input type="submit" name="submit" value="Ок">
+
+
+</form>
